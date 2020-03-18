@@ -25,7 +25,7 @@ api = tweepy.API(auth)
 
 class MyStreamListener(tweepy.StreamListener):
     def on_status(self, tweet):
-        if "RT" not in tweet.text:
+        if 'RT @' not in tweet.text:
             # print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
             # print(tweet.text)
             # print(tweet)
@@ -46,4 +46,4 @@ myStreamListener = MyStreamListener()
 myStream = tweepy.Stream(auth=api.auth, listener=myStreamListener)
 
 myStream.filter(track=["flutter app", "flutterapp",
-                       "flutterdev", "androiddev", "codenewbies", "nodejs"])
+                       "flutterdev", "androiddev"])
